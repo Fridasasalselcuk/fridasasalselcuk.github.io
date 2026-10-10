@@ -1,60 +1,24 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="tr">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Frida Şaşal Selçuk | Damacana Su</title>
-<meta name="description" content="Frida Şaşal Selçuk. 19 L damacana su, gel-al ve eve teslim. Atatürk Mahallesi 1034 Sokak No: 2B.">
-<meta name="theme-color" content="#087fce">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Frida Şaşal Su Selçuk - Damacana gel al, eve teslim ve Pirsu bardak su.">
+<title>Frida Şaşal Su Selçuk</title>
 <style>
-*{box-sizing:border-box}body{margin:0;font-family:Arial,sans-serif;color:#123047;background:#f4fbff}
-header{background:linear-gradient(135deg,#087fce,#12b9e8);color:#fff;padding:24px 18px 70px}
-.wrap{max-width:1000px;margin:auto}.top{display:flex;justify-content:space-between;align-items:center;gap:20px}
-.logo{font-size:25px;font-weight:800}.tag{font-size:14px;opacity:.9}
-.hero{text-align:center;padding:48px 10px 0}.hero h1{font-size:42px;margin:0 0 12px}.hero p{font-size:19px;margin:0 auto 28px;max-width:650px}
-.btn{display:inline-block;padding:15px 22px;border-radius:12px;text-decoration:none;font-weight:800;margin:5px}.wa{background:#18b957;color:#fff}.map{background:#fff;color:#087fce}
-main{max-width:1000px;margin:-35px auto 50px;padding:0 18px}
-.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
-.card{background:#fff;border-radius:18px;padding:25px;box-shadow:0 8px 25px #00000012}
-.price{font-size:38px;font-weight:900;color:#087fce}.card h2{margin-top:0}
-.info{display:grid;grid-template-columns:repeat(3,1fr);gap:15px;margin-top:18px}
-.info .card{text-align:center}.icon{font-size:30px}
-section{margin-top:25px}.cta{text-align:center;background:#e5f6ff;padding:35px;border-radius:20px}
-footer{text-align:center;padding:25px;color:#587080;font-size:14px}
-@media(max-width:650px){.top{align-items:flex-start}.hero h1{font-size:34px}.grid,.info{grid-template-columns:1fr}.price{font-size:34px}}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Arial,Helvetica,sans-serif;background:#f5f9ff;color:#12315d}.wrap{max-width:1100px;margin:auto;padding:0 18px}.top{background:#063b91;color:#fff;text-align:center;padding:9px;font-size:14px}.nav{background:#fff;position:sticky;top:0;z-index:10;box-shadow:0 2px 12px #12315d22}.navin{min-height:82px;display:flex;align-items:center;justify-content:space-between;gap:20px}.logo{width:175px;height:auto;display:block}.links{display:flex;gap:22px;align-items:center}.links a{text-decoration:none;color:#063b91;font-weight:700}.btn{display:inline-block;text-decoration:none;background:#e51f73;color:#fff;padding:14px 22px;border-radius:30px;font-weight:800;box-shadow:0 6px 15px #e51f7333}.hero{background:linear-gradient(135deg,#eaf6ff,#fff);padding:70px 0 55px;overflow:hidden}.heroGrid{display:grid;grid-template-columns:1.15fr .85fr;gap:40px;align-items:center}.hero h1{font-size:clamp(38px,6vw,66px);line-height:1.02;margin:0 0 18px;color:#063b91}.hero h1 span{color:#e51f73}.hero p{font-size:20px;line-height:1.6;margin:0 0 25px;color:#385477}.heroCard{background:#fff;border-radius:28px;padding:28px;box-shadow:0 15px 45px #063b911f;border:1px solid #dcecff}.heroCard .price{font-size:58px;font-weight:900;color:#e51f73;line-height:1}.heroCard small{color:#526b89}.section{padding:65px 0}.title{text-align:center;margin-bottom:35px}.title h2{font-size:36px;margin:0 0 10px;color:#063b91}.title p{margin:0;color:#60738e}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.card{background:#fff;border-radius:22px;padding:28px;box-shadow:0 10px 35px #12315d12;border:1px solid #e2edfa}.card h3{margin:0 0 12px;color:#063b91;font-size:22px}.price2{font-size:43px;font-weight:900;color:#e51f73;margin:8px 0 12px}.card p{color:#60738e;line-height:1.55}.notice{margin-top:25px;text-align:center;background:#eaf5ff;border-radius:16px;padding:15px;font-weight:700;color:#063b91}.contact{background:#063b91;color:#fff}.contact .title h2,.contact .title p{color:#fff}.contactGrid{display:grid;grid-template-columns:1fr 1fr;gap:22px}.contactBox{background:#ffffff12;border:1px solid #ffffff2b;border-radius:20px;padding:25px}.contactBox h3{margin-top:0}.contactBox a{color:#fff}.footer{background:#04285f;color:#dceaff;text-align:center;padding:22px}.mobile{display:none}.floating{position:fixed;right:18px;bottom:18px;background:#25d366;color:#fff;padding:15px 20px;border-radius:35px;text-decoration:none;font-weight:800;z-index:20;box-shadow:0 8px 25px #0003}@media(max-width:800px){.links{display:none}.mobile{display:inline}.hero{padding-top:45px}.heroGrid,.contactGrid{grid-template-columns:1fr}.cards{grid-template-columns:1fr}.navin{min-height:72px}.logo{width:150px}.heroCard{max-width:430px;margin:auto}.section{padding:50px 0}.title h2{font-size:30px}}
 </style>
 </head>
 <body>
-<header>
-<div class="wrap">
-<div class="top"><div class="logo">💧 Frida Şaşal Selçuk</div><div class="tag">Selçuk / İzmir</div></div>
-<div class="hero">
-<h1>Temiz Su, Kolay Sipariş</h1>
-<p>Frida Şaşal Selçuk'ta damacana su ihtiyacınız için gel-al ve eve teslim seçenekleri.</p>
-<a class="btn wa" href="https://wa.me/905416018272?text=Merhaba%2C%20Frida%20%C5%9Ea%C5%9Fal%20Su%27dan%20su%20sipari%C5%9Fi%20vermek%20istiyorum." target="_blank">💬 WhatsApp'tan Sipariş Ver</a>
-<a class="btn map" href="https://www.google.com/maps/search/?api=1&query=Atat%C3%BCrk%20Mahallesi%201034%20Sokak%20No%3A2B%20Sel%C3%A7uk%20%C4%B0zmir" target="_blank">📍 Konumu Gör</a>
-</div>
-</div>
-</header>
-
-<main>
-<div class="grid">
-<div class="card"><h2>🏪 Gel-Al</h2><div class="price">85 TL</div><p>Damacananızı dükkânımızdan alabilirsiniz.</p></div>
-<div class="card"><h2>🚚 Eve Teslim</h2><div class="price">110 TL</div><p>Selçuk içinde eve teslim seçeneği.</p></div>
-</div>
-
-<div class="info">
-<div class="card"><div class="icon">📍</div><b>Adres</b><br>Atatürk Mahallesi<br>1034 Sokak No: 2B</div>
-<div class="card"><div class="icon">📞</div><b>Telefon</b><br><a href="tel:+905416018272">0541 601 82 72</a></div>
-<div class="card"><div class="icon">💧</div><b>Damacana</b><br>Değişim ücreti yok</div>
-</div>
-
-<section class="cta">
-<h2>Su siparişiniz için WhatsApp'tan ulaşın</h2>
-<p>Konumunuzu WhatsApp üzerinden gönderin, siparişinizi kolayca oluşturalım.</p>
-<a class="btn wa" href="https://wa.me/905416018272?text=Merhaba%2C%20su%20sipari%C5%9Fi%20vermek%20istiyorum.%20Konumumu%20g%C3%B6nderiyorum." target="_blank">WhatsApp'tan Sipariş Ver</a>
-</section>
-</main>
-<footer>© 2026 Frida Şaşal Selçuk · Atatürk Mahallesi 1034 Sokak No: 2B</footer>
-</body>
-</html>
+<div class="top">Frida Şaşal Su Selçuk • Doğal Kaynak Suyu</div>
+<nav class="nav"><div class="wrap navin">
+<a href="#anasayfa"><img class="logo" src="https://fridasasal.com/assets/img/bg/frida_sasal.png" alt="Frida Şaşal Doğal Kaynak Suyu"></a>
+<div class="links"><a href="#fiyatlar">Fiyatlar</a><a href="#iletisim">İletişim</a><a class="btn" href="https://wa.me/905416018272?text=Merhaba%20Frida%20Şaşal%20Su%20siparişi%20vermek%20istiyorum." target="_blank">WhatsApp Sipariş</a></div>
+<div class="mobile"><a class="btn" href="https://wa.me/905416018272?text=Merhaba%20Frida%20Şaşal%20Su%20siparişi%20vermek%20istiyorum." target="_blank">WhatsApp</a></div>
+</div></nav>
+<section class="hero" id="anasayfa"><div class="wrap heroGrid"><div><h1>Temiz su,<br><span>sağlıklı yaşam.</span></h1><p>Selçuk'ta Frida Şaşal Doğal Kaynak Suyu. Damacana suyu gel-al veya eve teslim seçenekleriyle, Pirsu bardak su ile yanınızdayız.</p><a class="btn" href="#fiyatlar">Fiyatları Gör</a></div><div class="heroCard"><small>DAMACANA GEL AL</small><div class="price">85 TL</div><hr><small>EVE TESLİMAT</small><div class="price">110 TL</div><p style="margin-bottom:0">Damacana değişim ücreti yok.</p></div></div></section>
+<section class="section" id="fiyatlar"><div class="wrap"><div class="title"><h2>Güncel Fiyatlarımız</h2><p>Frida Şaşal Su Selçuk</p></div><div class="cards"><div class="card"><h3>19 L Damacana</h3><div class="price2">85 TL</div><p><b>Gel Al Fiyatı</b><br>Damacana değişim ücreti yok.</p></div><div class="card"><h3>19 L Damacana</h3><div class="price2">110 TL</div><p><b>Eve Teslim</b><br>Selçuk içi siparişler için WhatsApp'tan konumunuzu gönderebilirsiniz.</p></div><div class="card"><h3>Pirsu Bardak Su</h3><div class="price2">170 TL</div><p>Toplu kullanım, iş yeri ve etkinlikler için bardak su.</p></div></div><div class="notice">Sipariş vermek için WhatsApp butonuna dokunun ve konumunuzu gönderin.</div></div></section>
+<section class="section contact" id="iletisim"><div class="wrap"><div class="title"><h2>Bize Ulaşın</h2><p>Frida Şaşal Su Selçuk</p></div><div class="contactGrid"><div class="contactBox"><h3>Adres</h3><p>Atatürk Mahallesi<br>1034 Sokak No: 2B<br>Selçuk / İzmir</p></div><div class="contactBox"><h3>Telefon & WhatsApp</h3><p><a href="tel:+905416018272">0541 601 82 72</a></p><a class="btn" href="https://wa.me/905416018272?text=Merhaba%20Frida%20Şaşal%20Su%20siparişi%20vermek%20istiyorum." target="_blank">WhatsApp'tan Sipariş Ver</a></div></div></div></section>
+<footer class="footer">© 2026 Frida Şaşal Su Selçuk • Doğal Kaynak Suyu</footer>
+<a class="floating" href="https://wa.me/905416018272?text=Merhaba%20Frida%20Şaşal%20Su%20siparişi%20vermek%20istiyorum." target="_blank">💬 WhatsApp</a>
+</body></html>
