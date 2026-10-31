@@ -1,0 +1,9 @@
+{
+  "name": "Frida Şaşal Su Selçuk Yönetim",
+  "short_name": "Frida Yönetim",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#f1f5f9",
+  "theme_color": "#075985",
+  "icons": []
+}
