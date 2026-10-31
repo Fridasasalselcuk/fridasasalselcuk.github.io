@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#075985"><meta name="description" content="Frida Şaşal Su Selçuk işletme yönetimi">
+<link rel="manifest" href="manifest.json"><link rel="stylesheet" href="style.css">
+<title>Frida Şaşal Su Selçuk Yönetim</title>
+</head>
+<body>
+<header><div class="brand"><div class="drop">💧</div><div><b>FRİDA ŞAŞAL SU</b><small>SELÇUK YÖNETİM</small></div></div><div id="user-area"></div></header>
+<main>
+<section id="login-screen" class="panel login">
+<h1>İşletme yönetimine giriş</h1><p>Telefon ve bilgisayarda aynı hesabı kullanın.</p>
+<label>E-posta<input id="email" type="email" placeholder="ornek@mail.com"></label>
+<label>Şifre<input id="password" type="password" placeholder="En az 6 karakter"></label>
+<div class="actions"><button id="signup">Hesap oluştur</button><button id="login" class="secondary">Giriş yap</button></div>
+<p id="login-msg" class="hint">Önce Supabase bağlantı ayarlarını tamamlayın.</p>
+</section>
+<section id="app-screen" hidden>
+<nav id="tabs">
+<button data-tab="dashboard" class="active">Özet</button><button data-tab="sales">Satış</button><button data-tab="expenses">Gider</button><button data-tab="stock">Stok</button><button data-tab="accounts">Cari</button><button data-tab="cash">Kasa</button><button data-tab="reports">Raporlar</button>
+</nav>
+<div id="dashboard" class="view">
+<div class="welcome"><div><h1>İşletme özeti</h1><p id="today"></p></div><span class="sync" id="sync-status">Bulut bağlantısı bekleniyor</span></div>
+<div class="metrics">
+<article><small>Bu ay ciro</small><strong id="m-revenue">₺0</strong></article><article><small>Bu ay gider</small><strong id="m-expense">₺0</strong></article><article><small>Tahmini faaliyet sonucu</small><strong id="m-profit">₺0</strong></article><article><small>Kasa bakiyesi</small><strong id="m-cash">₺0</strong></article>
+</div>
+<div class="grid2"><section class="panel"><h2>Hızlı satış kaydı</h2><form id="quick-sale" class="formgrid">
+<label>Satış kanalı<select id="sale-channel"><option value="Gel-al">Gel-al</option><option value="Eve teslim">Eve teslim</option></select></label>
+<label>Ürün<select id="sale-product"><option>Damacana</option><option>Bardak su</option><option>Diğer</option></select></label>
+<label>Adet<input id="sale-qty" type="number" min="1" value="1" required></label><label>Birim fiyat (₺)<input id="sale-price" type="number" min="0" step=".01" value="85" required></label>
+<label>Tahsilat<select id="sale-payment"><option>Nakit</option><option>Banka</option><option>POS</option><option>Veresiye</option></select></label>
+<label>Müşteri / açıklama<input id="sale-customer" placeholder="İsteğe bağlı"></label>
+<button class="wide">Satışı kaydet</button></form></section>
+<section class="panel"><h2>Son işlemler</h2><div id="recent" class="tablewrap">Henüz kayıt yok.</div></section></div>
+</div>
+<div id="sales" class="view" hidden><section class="panel"><h1>Satış kayıtları</h1><p>Satışlar kaydedildiğinde gelir ve ürün stok hareketi oluşturulur.</p><div id="sales-list" class="tablewrap"></div></section></div>
+<div id="expenses" class="view" hidden><section class="panel"><h1>Gider ekle</h1><form id="expense-form" class="formgrid"><label>Gider türü<select id="expense-type"><option>Kira</option><option>Dolum / ürün alış</option><option>Nakliye</option><option>Yakıt</option><option>Muhasebe</option><option>Kredi taksiti</option><option>POS komisyonu</option><option>Personel</option><option>Diğer</option></select></label><label>Tutar (₺)<input id="expense-amount" type="number" min=".01" step=".01" required></label><label>Ödeme hesabı<select id="expense-account"><option>Nakit</option><option>Banka</option><option>POS</option><option>Ödenmedi</option></select></label><label>Tarih<input id="expense-date" type="date" required></label><label class="full">Açıklama<input id="expense-note" placeholder="Örn. Ekim ayı kira"></label><button class="wide">Gideri kaydet</button></form><h2>Gider geçmişi</h2><div id="expenses-list" class="tablewrap"></div></section></div>
+<div id="stock" class="view" hidden><section class="panel"><h1>Stok yönetimi</h1><p>Satışlar damacana ve ürün stoklarını otomatik azaltır. Alış veya sayım farkı için stok hareketi girin.</p><div id="stock-cards" class="metrics"></div><form id="stock-form" class="formgrid"><label>Ürün<select id="stock-product"><option>Dolu damacana</option><option>Boş damacana</option><option>Bardak su</option><option>Diğer</option></select></label><label>Hareket<select id="stock-kind"><option value="in">Stok girişi (+)</option><option value="out">Stok çıkışı (-)</option><option value="set">Mevcut miktarı düzelt</option></select></label><label>Miktar<input id="stock-qty" type="number" min="0" step="1" required></label><label>Açıklama<input id="stock-note" placeholder="Alış, iade, sayım..."></label><button class="wide">Stok hareketini kaydet</button></form><h2>Stok hareketleri</h2><div id="stock-list" class="tablewrap"></div></section></div>
+<div id="accounts" class="view" hidden><section class="panel"><h1>Cari hesaplar</h1><form id="account-form" class="formgrid"><label>Hesap adı<input id="account-name" required placeholder="Müşteri veya tedarikçi"></label><label>Tür<select id="account-type"><option>Müşteri</option><option>Tedarikçi</option><option>Diğer</option></select></label><label>Telefon<input id="account-phone"></label><label>Açılış bakiyesi (₺)<input id="account-opening" type="number" step=".01" value="0"></label><button class="wide">Cari hesap oluştur</button></form><div id="accounts-list" class="tablewrap"></div></section></div>
+<div id="cash" class="view" hidden><section class="panel"><h1>Kasa ve banka hareketleri</h1><form id="cash-form" class="formgrid"><label>Hesap<select id="cash-account"><option>Nakit</option><option>Banka</option><option>POS</option></select></label><label>Hareket<select id="cash-kind"><option value="in">Para girişi</option><option value="out">Para çıkışı</option></select></label><label>Tutar (₺)<input id="cash-amount" type="number" min=".01" step=".01" required></label><label>Açıklama<input id="cash-note" placeholder="Tahsilat, hesaba aktarım..."></label><button class="wide">Hareketi kaydet</button></form><div id="cash-balances" class="metrics"></div><h2>Hareket geçmişi</h2><div id="cash-list" class="tablewrap"></div></section></div>
+<div id="reports" class="view" hidden><section class="panel"><h1>Aylık rapor</h1><label>Ay seçin<input id="report-month" type="month"></label><div id="report-result" class="metrics"></div><div id="report-detail"></div><button id="export-csv" class="secondary">İşlemleri CSV indir</button></section></div>
+</section>
+</main>
+<footer>Frida Şaşal Su Selçuk Yönetim · İşletme takip paneli</footer>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script><script src="config.js"></script><script src="app.js"></script>
+</body></html>
